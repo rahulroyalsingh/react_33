@@ -1,22 +1,23 @@
-import React,{PureComponent} from 'react'
+import React, { PureComponent } from 'react'
 import './App.css';
-class App extends PureComponent {
+import Counter from './Counter'
+class App extends React.Component {
 
-constructor() {
-  super();
-  this.state={
-    count:0
+  constructor() {
+    super();
+    this.state = {
+      count: 0
+    }
   }
-  }
-  render() {
-    console.warn('check-rendering')
-    return(
+  render()
+   {
+    return (
       <div className='App'>
-      <h1>Pure Component {this.state.count}</h1>
-      <button onClick={()=>this.setState({count:this.state.count+1})}>Update Count</button>
+        <Counter count={this.state.count} />
+        <button onClick={() => this.setState({count:this.state.count+1})}>Update Count</button>
       </div>
-    
-  );
-}
+
+    );
+  }
 }
 export default App;
